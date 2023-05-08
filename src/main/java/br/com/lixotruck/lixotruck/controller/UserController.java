@@ -1,13 +1,17 @@
 package br.com.lixotruck.lixotruck.controller;
 
 import br.com.lixotruck.lixotruck.model.user.CreateUserDTO;
+import br.com.lixotruck.lixotruck.model.user.UpdateUserDTO;
+import br.com.lixotruck.lixotruck.model.user.UserDTO;
 import br.com.lixotruck.lixotruck.model.user.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("users")
@@ -23,5 +27,26 @@ public class UserController {
     @PostMapping()
     public void create(@RequestBody @Valid CreateUserDTO dto) {
         userService.create(dto);
+    }
+
+    @PutMapping("/{id}")
+    public void update(
+            @RequestBody @Valid UpdateUserDTO dto,
+            @PathVariable UUID id
+    ) {
+        userService.update(dto, id);
+    }
+
+    @GetMapping()
+    public Page<UserDTO> list(
+            @PageableDefault(size = 10)
+            Pageable pageable
+    ) {
+        return userService.list(pageable);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable UUID id) {
+        userService.delete(id);
     }
 }

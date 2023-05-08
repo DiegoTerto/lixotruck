@@ -23,11 +23,30 @@ public class User {
 
     private String password;
 
+    private Boolean active;
+
     public User(CreateUserDTO createUserDTO, UUID id) {
         this.id = id;
         this.name = createUserDTO.name();
         this.username = createUserDTO.username();
         this.email = createUserDTO.email();
         this.password = createUserDTO.password();
+        this.active = true;
+    }
+
+    public void update(UpdateUserDTO dto) {
+        if (dto.nome() != null) {
+            this.name = dto.nome();
+        }
+        if (dto.email() != null) {
+            this.email = dto.email();
+        }
+        if (dto.username() != null) {
+            this.username = dto.username();
+        }
+    }
+
+    public void inactive() {
+        this.active = false;
     }
 }
