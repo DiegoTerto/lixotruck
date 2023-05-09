@@ -36,7 +36,7 @@ public class UserService {
     }
 
     public Page<UserDTO> list(Pageable pageable) {
-        return userRepository.findAllByActiveTrue(pageable).map(UserDTO::new);
+        return userRepository.findAll(pageable).map(UserDTO::new);
     }
 
     public void delete(UUID userId) {
