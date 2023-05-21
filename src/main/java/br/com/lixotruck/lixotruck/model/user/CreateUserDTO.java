@@ -18,6 +18,8 @@ public record CreateUserDTO(
 
         @NotBlank
         @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])(?:([0-9a-zA-Z$*&@#])(?!\\1)){8,}$")
-        String password
+        String password,
+
+        String cnh
 ) {
 }
