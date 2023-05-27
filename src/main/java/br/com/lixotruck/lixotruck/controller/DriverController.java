@@ -1,5 +1,6 @@
 package br.com.lixotruck.lixotruck.controller;
 
+import br.com.lixotruck.lixotruck.model.driver.CreateDriverDTO;
 import br.com.lixotruck.lixotruck.model.driver.DriverDTO;
 import br.com.lixotruck.lixotruck.model.driver.UpdateDriverDTO;
 import br.com.lixotruck.lixotruck.model.driver.service.DriverService;

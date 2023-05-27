@@ -1,6 +1,6 @@
 package br.com.lixotruck.lixotruck.model.driver.service;
 
-import br.com.lixotruck.lixotruck.controller.CreateDriverDTO;
+import br.com.lixotruck.lixotruck.model.driver.CreateDriverDTO;
 import br.com.lixotruck.lixotruck.model.driver.Driver;
 import br.com.lixotruck.lixotruck.model.driver.DriverDTO;
 import br.com.lixotruck.lixotruck.model.driver.DriverRepository;
@@ -11,9 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Service
 public class DriverService {

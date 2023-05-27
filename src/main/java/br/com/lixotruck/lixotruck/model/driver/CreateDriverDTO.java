@@ -1,4 +1,4 @@
-package br.com.lixotruck.lixotruck.controller;
+package br.com.lixotruck.lixotruck.model.driver;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

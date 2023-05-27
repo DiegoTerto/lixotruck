@@ -44,4 +44,11 @@ public class UserService {
         user.inactive();
         userRepository.save(user);
     }
+
+    public void auth(AuthDTO dto) {
+        var user = userRepository.findByEmail(dto.email()).orElseThrow(() -> new RuntimeException("Email incorreto"));
+        if (!user.getPassword().equals(dto.password())) {
+            throw new RuntimeException("Senha incorreta");
+        }
+    }
 }

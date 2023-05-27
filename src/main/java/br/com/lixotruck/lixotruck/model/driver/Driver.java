@@ -1,6 +1,5 @@
 package br.com.lixotruck.lixotruck.model.driver;
 
-import br.com.lixotruck.lixotruck.controller.CreateDriverDTO;
 import br.com.lixotruck.lixotruck.model.user.User;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
