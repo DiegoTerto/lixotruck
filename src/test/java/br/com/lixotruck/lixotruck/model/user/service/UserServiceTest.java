@@ -29,7 +29,7 @@ class UserServiceTest {
 
     @Test
     void shouldCreateOK() {
-        CreateUserDTO createUserDTO = new CreateUserDTO("name", "username", "email", "pass");
+        CreateUserDTO createUserDTO = new CreateUserDTO("name", "username", "email", "pass", "");
 
         assertDoesNotThrow(() -> userService.create(createUserDTO));
         verify(userRepository).save(any());
