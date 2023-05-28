@@ -17,6 +17,6 @@ public class SpringDocConfigurations {
                         .description("API Rest da aplicação Lixo-Truck, contendo as funcionalidades de CRUD de usuários, caminhões, motoristas, entre outras...")
                         .contact(new Contact()
                                 .name("Time Lixo-Truck")
-                                .email("diegotsouza@outlook.com")));
+                                .email("diegotsouza@outlook.com,guilhermebecegato@gmail.com")));
     }
 }
