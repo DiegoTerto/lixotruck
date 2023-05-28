@@ -1,0 +1,1 @@
+web: java -jar target/lixo-truck-api-1.0.0-SNAPSHOT.jar
