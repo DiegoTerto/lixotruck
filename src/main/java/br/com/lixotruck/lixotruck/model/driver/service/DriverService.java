@@ -49,7 +49,7 @@ public class DriverService {
 
     public void delete(UUID id) {
         var driver = driverRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Motorista não encontra"));
+                .orElseThrow(() -> new RuntimeException("Motorista não encontrado"));
         driverRepository.delete(driver);
     }
 }
