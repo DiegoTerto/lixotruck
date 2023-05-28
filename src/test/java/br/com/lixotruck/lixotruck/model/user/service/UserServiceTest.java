@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.Optional;
@@ -27,9 +28,12 @@ class UserServiceTest {
     @Mock
     private ValidateExistUserService validateExistUserService;
 
+    @Mock
+    private Pageable pageable;
+
     @Test
     void shouldCreateOK() {
-        CreateUserDTO createUserDTO = new CreateUserDTO("name", "username", "email", "pass");
+        CreateUserDTO createUserDTO = new CreateUserDTO("name", "username", "email", "pass", "cnh");
 
         assertDoesNotThrow(() -> userService.create(createUserDTO));
         verify(userRepository).save(any());
@@ -46,15 +50,6 @@ class UserServiceTest {
         assertDoesNotThrow(() -> userService.update(updateUserDTO, uuid));
         verify(userRepository).save(any());
     }
-
-//    @Test
-//    void shouldListOK() {
-//        UUID uuid = UUID.randomUUID();
-//        UserDTO userDTO = new UserDTO(uuid, "name", "username", "email", true);
-//        Page<UserDTO> page = Page(userDTO);
-//
-//        assertDoesNotThrow(() -> userService.list());
-//    }
 
     @Test
     void shouldDeleteOK() {
