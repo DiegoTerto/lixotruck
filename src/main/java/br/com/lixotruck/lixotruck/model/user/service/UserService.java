@@ -51,4 +51,9 @@ public class UserService {
             throw new RuntimeException("Senha incorreta");
         }
     }
+
+    public UserDTO getByEmail(String email) {
+        var user = userRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("Email incorreto"));
+        return new UserDTO(user);
+    }
 }

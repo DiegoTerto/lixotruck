@@ -57,4 +57,10 @@ public class UserController {
         userService.auth(dto);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/{email}")
+    public ResponseEntity<UserDTO> getByEmail(@PathVariable String email) {
+        var userDTO = userService.getByEmail(email);
+        return ResponseEntity.ok().body(userDTO);
+    }
 }
