@@ -52,7 +52,7 @@ public class UserController {
         userService.delete(id);
     }
 
-     @PutMapping("/authenticate")
+    @GetMapping("/authenticate")
     public ResponseEntity authenticate(@RequestBody AuthDTO dto) {
         userService.auth(dto);
         return ResponseEntity.ok().build();
