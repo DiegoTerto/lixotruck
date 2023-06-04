@@ -41,7 +41,7 @@ class UserServiceTest {
 
     @Test
     void shouldUpdateOK() {
-        UpdateUserDTO updateUserDTO = new UpdateUserDTO("name", "username", "email");
+        UpdateUserDTO updateUserDTO = new UpdateUserDTO("name", "username", null);
         UUID uuid = UUID.randomUUID();
         User user = new User(uuid, "name", "username", "email", "pass", true);
 

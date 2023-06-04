@@ -35,8 +35,8 @@ public class User {
     }
 
     public void update(UpdateUserDTO dto) {
-        if (dto.nome() != null) {
-            this.name = dto.nome();
+        if (dto.name() != null) {
+            this.name = dto.name();
         }
         if (dto.email() != null) {
             this.email = dto.email();
